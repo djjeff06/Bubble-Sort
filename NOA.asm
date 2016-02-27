@@ -1,8 +1,21 @@
 global _bubblesort
-;extern _printf, _system, _scanf, _gets, _getchar
+extern _printf, _system, _scanf, _gets, _getchar
 
 section.text
 _bubblesort:
+
+	;prompt user to enter nmber of elements and store it in i
+	push CLR
+	call _system
+	add esp,4
+	push prompt1
+	call _printf
+	add esp,4
+	push i
+	push scanz
+	call _scanf
+	add esp,8
+	
 	push INPUT
 	push SORTBY
 	add esp, 8
@@ -48,3 +61,8 @@ _bubblesort:
 section.data:
 INPUT  db "holy shit19368264"13,10,0; the array
 SORTBY db 01h; boolean 1 = arrange greater, 0 = arrange lesser
+prompt1 db "Enter number of elements: ",13,10,0
+prompt2 db "Number %d: ",0
+scanz db "%d"
+i dd 0
+j dd 
