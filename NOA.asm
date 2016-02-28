@@ -5,9 +5,6 @@ section.text
 _bubblesort:
 
 	;prompt user to enter nmber of elements and store it in i
-	push CLR
-	call _system
-	add esp,4
 	push prompt1
 	call _printf
 	add esp,4
